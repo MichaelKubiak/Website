@@ -1,0 +1,47 @@
+html, body{
+    font-family: sans-serif;
+    height:100%
+}
+
+.screenwidth{
+    width:100%;
+}
+
+.screenwidth .title{
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.screenheight{
+    height:75%;
+    margin: 0;
+}
+
+.centre{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.menu{
+    display: inline-block;
+    background-color: black;
+    border:1px solid white;
+    color: white;
+    width:19%;
+}
+
+.menu:hover{
+    background-color: white;
+    color:black;
+    border:1px solid black;
+}
+
+.this_page{
+    cursor: pointer;
+    display: inline-block;
+    background-color: black;
+    border:1px solid white;
+    color: white;
+    width:19%;
+}
