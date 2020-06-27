@@ -13,7 +13,7 @@
             return;
         $pages = array();
         foreach (getfiles("$path") as $page){
-            if ($page[extension] == "html" || $page[extension] == "php"){
+            if ($page[extension] == "html" || $page[extension] == "php" || $page[extension] == "phtml"){
                 $name = getMetaName($path, $page);
                 
                 if ($path)
