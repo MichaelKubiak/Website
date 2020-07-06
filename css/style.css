@@ -23,7 +23,7 @@ html, body{
     margin-bottom: 0;
 }
 
-.menu{
+.other_menu{
     display: inline-block;
     background-color: black;
     border:1px solid white;
@@ -37,7 +37,7 @@ html, body{
     border:1px solid black;
 }
 
-.this_page{
+.this_menu{
     cursor: pointer;
     display: inline-block;
     background-color: black;
