@@ -17,8 +17,11 @@
         $new = false;
         foreach (getfiles($path) as $page){
             if (!isset($page['extension'])){
-                
-                array_push($pages, getMenuLists("$path/$page[filename]", $i+1));
+                $next = getMenuLists("$path/$page[filename]", $i+1);
+                if ($next != null){
+                    array_push($pages, $next);
+                    $new = true;
+                }
 
             }
             else if ($page['extension'] == "html" || $page['extension'] == "phtml"){
@@ -27,9 +30,13 @@
                 if ($path)
                     $name = "$path/$name";
                 array_push($pages, "$name");
+                $new = true;
             }
         }
-        return $pages;
+        if ($new = true)
+            return $pages;
+        else
+            return null;
     }
 
     function getMetaName($path, $page){

@@ -1,29 +1,29 @@
-1. Complete menu system:
-	-	make getMenuLists only return folders with phtml or html files (not return empty arrays for other folders)
-        -   bool that determines whether anything new has been added this iteration
-        -   function returns null if bool is false
-        -   only add the next iteration to the array if it did not return null
-	-	make a template menu item
-        -   <a> used in previous projects, and worked
-        -   needs to be in php tags so that variables can be used to add the text and path
-	-	use that template menu item in a foreach loop to produce the full menu
+1. Complete menu system: - GOAL 14/07
+	-	make getMenuLists only return folders with phtml or html files (not return empty arrays for other folders) - GOAL 11/07 - COMPLETE 11/07
+        -   bool that determines whether anything new has been added this iteration ✓
+        -   function returns null if bool is false ✓
+        -   only add the next iteration to the array if it did not return null ✓
+	-	make a template menu item - GOAL 11/07 - COMPLETE 11/07 
+        -   <a> used in previous projects, and worked ✓
+        -   needs to be in php tags so that variables can be used to add the text and path ✓
+	-	use that template menu item in a foreach loop to produce the full menu - GOAL 13/07 
         -   ensure that the correct number of items are created
         -   may need multilevel menus?
 
-2. Decide on page layout
-	-	create basic layout (before the rest)
+2. Decide on page layout - GOAL ONGOING
+	-	create basic layout (before the rest) GOAL 16/07
 	-	---Remainder may not be set at this point
 		-	colour scheme
 		-	Page titles?
 		-	Ensure text not too clumped - images etc. to break it up
 
-3. Create page content
-	-	Page with an image of me, maybe a little background
-	-	CV section
+3. Create page content - GOAL 07/08
+	-	Page with an image of me, maybe a little background - GOAL FIRST DRAFT 20/07 
+	-	CV section - GOAL 22/07
 		-	Education
 		-	Work
 		-	Voluntary Work
-	-	Projects section
+	-	Projects section - GOAL 28/07
 		-	Masters project
 		-	Microprocessor project
 		-	Website...
