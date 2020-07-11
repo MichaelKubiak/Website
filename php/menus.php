@@ -25,11 +25,7 @@
 
             }
             else if ($page['extension'] == "html" || $page['extension'] == "phtml"){
-                $name = getMetaName($path, $page);
-                
-                if ($path)
-                    $name = "$path/$name";
-                array_push($pages, "$name");
+                array_push($pages, $page);
                 $new = true;
             }
         }
