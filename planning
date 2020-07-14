@@ -8,7 +8,8 @@
         -   needs to be in php tags so that variables can be used to add the text and path ✓
 	-	use that template menu item in a foreach loop to produce the full menu - GOAL 13/07 
         -   ensure that the correct number of items are created
-        -   may need multilevel menus?
+        -   2 level menus for now, anything else can be investigated in the future
+        -   item positioning
 
 2. Decide on page layout - GOAL ONGOING
 	-	create basic layout (before the rest) GOAL 16/07

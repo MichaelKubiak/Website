@@ -51,18 +51,71 @@
         $page = pathinfo($_SERVER['PHP_SELF']);
         $path = _ROOT . $page['dirname'];
         $name = getMetaName($path, $page);
-        return "$path/$name";
+        return "$path$name";
     }
 
     function createMenuSystem($pages, $current){
+        reorderArray($pages);
+        echo "<nav class='screenwidth'>";
         foreach ($pages as $page){
-            if ($page == $current)
-                $style = "this_menu";
-            else
-                $style = "other_menu";
-            $splitpage = explode("/", $page);
-            $name = array_pop($splitpage);
-            echo "<a class=$style href=$page>$name</a>";
+            if ($page['extension']){
+                $name = getMetaName($page['dirname'], $page);
+                if ($name == str_replace([".", "/"], "", $current)){
+                    $style = "this_menu";
+                }else
+                    $style = "other_menu";
+                echo "<a class=$style href='$page[dirname]/$page[basename]' style='text-decoration:none'>$name</a>";
+            }else{
+                $heading = str_replace([".","/"], "", $page[0]['dirname']);
+                echo "<div onmouseenter=dropdown($heading) onmouseout=closeMenu($heading) class=other_menu>$heading";
+                echo "<div id='$heading' class='dropdown_content'>";
+                foreach ($page as $subpage){
+                    if ($subpage['extension']){
+                        $name = getMetaName($subpage['dirname'], $subpage);
+                        echo "<a onmouseenter=dropdown($heading) onmouseexit=closeMenu($heading) class=ddchild href='$subpage[dirname]/$subpage[basename]'>$name</a>";
+                    }
+                }
+                
+                
+                echo "</div></div>";
+            }
+        }
+        echo "</nav>";
+    }
+
+    function reorderArray(&$pages){
+        $order = fopen(_ROOT . "/ordering", "r") or die ("An error has occurred, please contact me on michael.kubiak@bath.edu");
+        $start = fgets($order);
+        $end = fgets($order);
+        // delimited by ^
+        $startarray = explode("^", $start);
+        $endarray = explode("^", $end);
+        // get file information for all items in the arrays, so that they will match the information in $pages
+        foreach($startarray as &$startitem)
+            $startitem = pathinfo(str_replace("\n", "", _ROOT . $startitem));
+        foreach($endarray as &$enditem)
+            $enditem = pathinfo(str_replace("\n", "", _ROOT . $enditem));
+        moveArrayItems($pages, $startarray, 0);
+        moveArrayItems($pages, $endarray, count($pages));
+        fclose($order);
+    }
+
+    // move array of items to a specific position in sequence, so that the last will end up in that position, with the other items having been moved in a direction dependent on where in the array they are being moved to.  In the cases that are relevant, the $start array must have the first item as the item which should have the highest index at the end of the process, while the $end array must have the first item as the item which should have the lowest final index
+    function moveArrayItems(&$array, $items, $position){
+        foreach ($items as $item){
+            moveArrayItem($array, $item, $position);
+        }
+    }
+    
+    // move a single item to a specific position in the array
+    function moveArrayItem(&$array, $item, $position){
+        $pos = array_search($item, $array);
+        // if ($pos) doesn't work for index 0
+        if(in_array($item, $array)){
+            // remove one value from the array at the starting position
+            $removed = array_splice($array, $pos, 1);
+            // replace that value at the finishing position, without removing any elements
+            array_splice($array, $position, 0, $removed);
         }
     }
 ?>

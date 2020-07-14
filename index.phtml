@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<?php 
+            include("./php/constants.php");
+            include(_PHP . "/menus.php");
+        
+        ?>
+		<meta charset="UTF-8">
+		<title>Untitled Document</title>
+		<meta name="Author" content="Michael Kubiak"/>
+		<meta name="Homepage" content="" id = "name"/>
+		<?php
+            echo "<link rel='stylesheet' type='text/css' href='". _CSS ."style.css'>";
+            echo "<script src=" . _JS . "menus.js></script>";
+            $pages = getMenuLists();
+            $current = getCurrentPage();
+        ?>
+	</head>
+	<body>
+		<?php createMenuSystem($pages, $current);?>
+		
+	</body>
+</html>
