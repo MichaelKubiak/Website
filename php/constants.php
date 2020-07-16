@@ -3,6 +3,7 @@
     define('_PHP', _ROOT . "/php/");
     define('_CSS', _ROOT . "/css/");
     define('_JS', _ROOT . "/js/");
+    define('_IMG', _ROOT . "/Images/");
 
     function getRootPath(){
         $thispage = $_SERVER['PHP_SELF'];

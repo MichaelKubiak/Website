@@ -56,18 +56,22 @@
 
     function createMenuSystem($pages, $current){
         reorderArray($pages);
+        $width = 100/count($pages);
+        $title = str_replace(["/", "."], "", $current);
+        echo "<div class='title screenwidth'>$title</div>";
         echo "<nav class='screenwidth'>";
         foreach ($pages as $page){
             if ($page['extension']){
                 $name = getMetaName($page['dirname'], $page);
                 if ($name == str_replace([".", "/"], "", $current)){
-                    $style = "this_menu";
+                    $style = "menu menu-this";
                 }else
-                    $style = "other_menu";
-                echo "<a class=$style href='$page[dirname]/$page[basename]' style='text-decoration:none'>$name</a>";
+                    $style = "menu menu-other";
+                
+                echo "<a class='$style' href='$page[dirname]/$page[basename]' style='min-width:$width%'>$name <br><span class=hidden>&#8964</span></a>";
             }else{
                 $heading = str_replace([".","/"], "", $page[0]['dirname']);
-                echo "<div onmouseenter=dropdown($heading) onmouseout=closeMenu($heading) class=other_menu>$heading";
+                echo "<div onmouseenter=dropdown($heading) onmouseout=closeMenu($heading) class='menu menu-other' style='min-width:$width%'>$heading<br>&#8964";
                 echo "<div id='$heading' class='dropdown_content'>";
                 foreach ($page as $subpage){
                     if ($subpage['extension']){
