@@ -51,21 +51,22 @@
         $page = pathinfo($_SERVER['PHP_SELF']);
         $path = _ROOT . $page['dirname'];
         $name = getMetaName($path, $page);
-        return "$path$name";
+        return "$path/$name";
     }
 
     function createMenuSystem($pages, $current){
         reorderArray($pages);
         $width = 100/count($pages);
-        $title = str_replace(["/", "."], "", $current);
+        $splittitle = explode("/", $current);
+        $title = $splittitle[count($splittitle)-1];
         echo "<div class='title screenwidth'>$title</div>";
         echo "<nav class='screenwidth'>";
         foreach ($pages as $page){
             if ($page['extension']){
                 $name = getMetaName($page['dirname'], $page);
-                if ($name == str_replace([".", "/"], "", $current)){
+                if ($name == str_replace([".", "/"], "", $current))
                     $style = "menu menu-this";
-                }else
+                else
                     $style = "menu menu-other";
                 
                 echo "<a class='$style' href='$page[dirname]/$page[basename]' style='min-width:$width%'>$name <br><span class=hidden>&#8964</span></a>";
@@ -76,7 +77,11 @@
                 foreach ($page as $subpage){
                     if ($subpage['extension']){
                         $name = getMetaName($subpage['dirname'], $subpage);
-                        echo "<a onmouseenter=dropdown($heading) onmouseexit=closeMenu($heading) class=ddchild href='$subpage[dirname]/$subpage[basename]'>$name</a>";
+                        if ($name == explode("/", $current)[count(explode("/", $current))-1])
+                            $style = "ddchild menu-this";
+                        else
+                            $style = "ddchild menu-other";
+                        echo "<a onmouseenter=dropdown($heading) onmouseexit=closeMenu($heading) class='$style'' href='$subpage[dirname]/$subpage[basename]'>$name</a>";
                     }
                 }
                 

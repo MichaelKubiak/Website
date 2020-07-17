@@ -1,0 +1,8 @@
+.title{
+    padding-top: 1%;
+    text-align: center;
+    color: var(--primary-text);
+    background-color: var(--secondary-menu);
+    font-size: 200%;
+    min-height:10%;
+}

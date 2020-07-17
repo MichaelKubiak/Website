@@ -13,12 +13,25 @@
 		<?php
             echo "<link rel='stylesheet' type='text/css' href='". _CSS ."style.css'>";
             echo "<script src=" . _JS . "menus.js></script>";
+            echo "<script src=" . _JS . "buttons.js></script>";
             $pages = getMenuLists();
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
 		<?php createMenuSystem($pages, $current);?>
-		
+		<section>
+            <h2 id=bioinf onmouseup='collapse(bioinf)'>MSc Bioinformatics</h2>
+            <p class=inside>This is text that should disappear</p>
+            
+        </section>
+        
+        <section>
+            <h2>BSc Natural Sciences</h2>
+        </section>
+        
+        <section>
+            <h2>A/AS levels</h2>
+        </section>
 	</body>
 </html>

@@ -4,7 +4,7 @@
     --light-blue: #dbe8f9;
     --darker-blue: #a3b9c2;
     --light-yellow: #ffffed;
-    --light-orange: #ffb739;
+    --light-orange: #fff0d1;
     --dark-blue: #333366;
 }
 
@@ -14,28 +14,16 @@ html, body{
     margin-top: 0;
     margin-left: 0;
     margin-right:0;
-    --secondary-menu: var(--dark-orange);
-    --primary-menu: var(--dark-blue);
-    --primary-text: black;
-    --secondary-text: white;
-    background-color: var(--dark-blue);
+    --secondary-menu: var(--dark-blue);
+    --primary-menu: white;
+    --primary-text: white;
+    --secondary-text: black;
+    background-color: white;
     
-}
-
-.hidden{
-    opacity:0%;
 }
 
 .screenwidth{
     width:100%;
-}
-
-.title{
-    text-align: center;
-    color: var(--primary-text);
-    background-color: var(--secondary-menu);
-    font-size: 200%;
-    min-height:10%;
 }
 
 .screenheight{
@@ -48,68 +36,13 @@ html, body{
     margin-bottom: 0;
 }
 
-.menu{
-    display:inline-block;
-    text-decoration:none;
-    text-align: center;
-}
-
-.menu-this{
-    color: var(--secondary-text);
-    background-color: var(--primary-menu);
-    
-    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-}
-
-.menu-other{
-    color: var(--primary-text);
-    background-color: var(--secondary-menu);
-    border-color: var(--secondary-menu);
-    
-    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-}
-
-.menu-other:hover{
-    color: var(--secondary-text);
-    background-color: var(--primary-menu);
-    
-}
-
-.dropdown_content{
-    display:none;
-    position:absolute;
-    background-color: var(--secondary-menu);
-    min-width: inherit;
-    text-decoration:none;
-    text-align: center;
-}
-
-a.ddchild{
-    background-color: var(--secondary-menu);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: var(--primary-text);
-}
-
-a.ddchild:hover{
-    background-color:var(--primary-menu);
-    color: var(--secondary-menu);
-    border-style: solid;
-    border-width: thin;
-    border-color: var(--secondary-menu);
-}
-
-.show {display:block;}
-
-.hide {display:none;}
-
 p{
     margin-right: 1%;
+    margin-left: 1%;
+    color: var(--secondary-text);
+}
+
+h2{
     margin-left: 1%;
     color: var(--secondary-text);
 }
