@@ -15,7 +15,8 @@
             echo "<link rel='stylesheet' type='text/css' href='". _CSS ."style.css'>";
             echo "<link rel='stylesheet' type='text/css' href='". _CSS ."menus.css'>";
             echo "<script src=" . _JS . "menus.js></script>";
-            $pages = getMenuLists();
+            $pages = getFileLists($exts = ["phtml", "html"]);
+            echo json_encode($pages);
             $current = getCurrentPage();
         ?>
 	</head>

@@ -9,7 +9,7 @@
         return $out;
     }
 
-    function getMenuLists($path = _ROOT, $i = 0){
+    function getFileLists($path = _ROOT, $i = 0, $exts = []){
         
         if ($i >10)
             return;
@@ -17,16 +17,21 @@
         $new = false;
         foreach (getfiles($path) as $page){
             if (!isset($page['extension'])){
-                $next = getMenuLists("$path/$page[filename]", $i+1);
+                $next = getFileLists("$path/$page[filename]", $i+1);
                 if ($next != null){
                     array_push($pages, $next);
                     $new = true;
                 }
 
             }
-            else if ($page['extension'] == "html" || $page['extension'] == "phtml"){
-                array_push($pages, $page);
-                $new = true;
+            else{
+                foreach ($exts as $ext){
+                    if ($page['extension'] == $ext){
+                        
+                        array_push($pages, $page);
+                        $new = true;
+                    }
+                }
             }
         }
         if ($new = true)
