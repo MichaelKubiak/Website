@@ -9,15 +9,14 @@
         return $out;
     }
 
-    function getFileLists($path = _ROOT, $i = 0, $exts = []){
-        
+    function getFileLists($exts = [], $path = _ROOT, $i = 0){
         if ($i >10)
             return;
         $pages = array();
         $new = false;
         foreach (getfiles($path) as $page){
             if (!isset($page['extension'])){
-                $next = getFileLists("$path/$page[filename]", $i+1);
+                $next = getFileLists($exts, "$path/$page[filename]", $i+1);
                 if ($next != null){
                     array_push($pages, $next);
                     $new = true;

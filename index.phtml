@@ -11,19 +11,18 @@
 		<meta name="Author" content="Michael Kubiak"/>
 		<meta name="Homepage" content="" id="name"/>
 		<?php
-            
-            echo "<link rel='stylesheet' type='text/css' href='". _CSS ."style.css'>";
-            echo "<link rel='stylesheet' type='text/css' href='". _CSS ."menus.css'>";
-            echo "<script src=" . _JS . "menus.js></script>";
-            $pages = getFileLists($exts = ["phtml", "html"]);
-            echo json_encode($pages);
+            foreach (getFileLists(["css"], _CSS) as $file){
+                echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
+            }
+            echo "<script src=" . _JS . "/menus.js></script>";
+            $pages = getFileLists(["phtml", "html"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
 		<?php createMenuSystem($pages, $current);?>
         <h2>About me</h2>
-        <?php echo "<img src='" . _IMG . "Me.jpg' width = 30% class='right' style='margin-top:1%'>"?>
+        <?php echo "<img src='" . _IMG . "/Me.jpg' width = 30% class='right' style='margin-top:1%'>"?>
         <p>I am a multidisciplinary, scientifically trained programmer, with knowledge in areas of biology, chemistry, and physics, and experience using multiple programming languages.  I enjoy working on interesting projects, and have a number on the go at present, as you'll see from the appropriate sections of the website.</p>
         <p>I have recently completed my MSc Bioinformatics at the University of Leicester with a Distinction, and I'm actively looking for a job or PhD, particularly in bioinformatics, but I'm open to anything that seems interesting (or even just gives me more experience).</p>
         <p>Currently, I live in South Wales, on a hill overlooking the Usk valley, and break up my days of coding and job applications by taking the dogs for walks through the forest.  I also play the piano to relax me when the project that I am currently working on gets too frustrating.</p>
