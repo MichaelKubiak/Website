@@ -7,13 +7,15 @@
         
         ?>
 		<meta charset="UTF-8">
-		<title>Untitled Document</title>
+		<title>MICHAEL KUBIAK - Website Project</title>
 		<meta name="Author" content="Michael Kubiak"/>
 		<meta name="Website" content="" id = "name"/>
 		<?php
-            echo "<link rel='stylesheet' type='text/css' href='". _CSS ."style.css'>";
-            echo "<script src=" . _JS . "menus.js></script>";
-            $pages = getMenuLists();
+			foreach (getFileLists(["css"], _CSS) as $file){
+                echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
+            }
+			echo "<script src=" . _JS . "/menus.js></script>";
+            $pages = getFileLists(["html", "phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>

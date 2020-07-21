@@ -42,7 +42,7 @@ p{
     color: var(--secondary-text);
 }
 
-h2{
+h2, h3, h4, h5{
     margin-left: 1%;
     color: var(--secondary-text);
 }
@@ -54,4 +54,12 @@ img{
 
 img.right{
     float:right;
+}
+
+.show {display:block;}
+
+.hide {display:none;}
+
+.hidden{
+    opacity:0%;
 }
