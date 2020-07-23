@@ -73,10 +73,10 @@
                 else
                     $style = "menu menu-other";
                 
-                echo "<a class='$style' href='$page[dirname]/$page[basename]' style='min-width:$width%'>$name <br><span class=hidden>&#8964</span></a>";
+                echo "<a class='$style' href='$page[dirname]/$page[basename]' style='min-width:$width%'>$name <br><span class=hidden>&#8964;</span></a>";
             }else{
                 $heading = str_replace([".","/"], "", $page[0]['dirname']);
-                echo "<div onmouseenter=dropdown($heading) onmouseout=closeMenu($heading) class='menu menu-other' style='min-width:$width%'>$heading<br>&#8964";
+                echo "<div onmouseover=dropdown($heading) onmouseout=closeMenu($heading) class='menu menu-other' style='min-width:$width%'>$heading<br>&#8964;\n";
                 echo "<div id='$heading' class='dropdown_content'>";
                 foreach ($page as $subpage){
                     if ($subpage['extension']){
@@ -85,7 +85,7 @@
                             $style = "ddchild menu-this";
                         else
                             $style = "ddchild menu-other";
-                        echo "<a onmouseenter=dropdown($heading) onmouseexit=closeMenu($heading) class='$style'' href='$subpage[dirname]/$subpage[basename]'>$name</a>";
+                        echo "<a onmouseover=dropdown($heading) onmouseout=closeMenu($heading) class='$style' href='$subpage[dirname]/$subpage[basename]'>$name</a>";
                     }
                 }
                 

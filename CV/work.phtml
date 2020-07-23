@@ -4,6 +4,7 @@
 		<?php 
             include("../php/constants.php");
             include(_PHP . "/menus.php");
+            include(_PHP . "/collapsible.php");
         
         ?>
 		<meta charset="UTF-8">
@@ -15,12 +16,140 @@
                 echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
+            echo "<script src=" . _JS . "/buttons.js></script>";
             $pages = getFileLists(["html", "phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
 		<?php createMenuSystem($pages, $current);?>
-		
+        <br>
+        Please <a href="../contact.phtml">contact me</a> for further contact details of referees.
+        
+		<section>
+            <?php startCollapsible("demon");?>
+                <h2 class=sectionheading>Python Demonstrator - 2020</h2>
+                <p class = place>University of Leicester UniTemps</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I provided information and guidance for students (the 2020-21 cohort of MSc Bioinformatics students) during practical sessions, helping them to consolidate the information that they had gained during their lectures.
+                </p>
+                <p>
+                    I also marked coursework that the students had written, providing fixed versions where neccessary, and returned those marks to the lecturer for moderation.
+                </p>
+                <hr style="width:10px">
+                <section>
+                    <?php startCollapsible("demref");?>
+                        <h3 class=sectionheading>Referee</h3>
+                        <small id=show>(show)</small>
+                        <small id=hide class=hide>(hide)</small>
+                    </div>
+                    <div class='inside centre'>
+                        <br>
+                        Dr Ralf Schmid<br>
+                        Department of Molecular and Cell Biology<br>
+                        Henry Wellcome Building<br>
+                        University of Leicester<br>
+                        LE1 7RH
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+		<section>
+            <?php startCollapsible("pub");?>
+                <h2 class=sectionheading>Bar Manager - 2017-18</h2>
+                <p class = place>The White Hart, Llangybi</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I was employed as the bar manager, looking after the bar and restaurant, as well as opening and closing the pub.  I also made beer and wine orders at my own discretion.
+                </p>
+                <p>
+                    During the time that the owner was on holiday, I was in charge of staff hours and wages.
+                </p>
+                <hr style="width:10px">
+                <section>
+                    <?php startCollapsible("pubref");?>
+                        <h3 class=sectionheading>Referee</h3>
+                        <small id=show>(show)</small>
+                        <small id=hide class=hide>(hide)</small>
+                    </div>
+                    <div class='inside centre'>
+                        <br>
+                        Mr Khaled Shalaby<br>
+                        The White Hart Village Inn<br>
+                        Llangybi<br>
+                        Usk<br>
+                        NP15 1NP<br>
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+		<section>
+            <?php startCollapsible("pim");?>
+                <h2 class=sectionheading>Researcher - 2016</h2>
+                <p class = place>University of Bath</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I conducted research into the effectiveness of using a polymer of intrinsic microporosity (PIM) as a template to deposit microfilaments of gold for use in sensing applications.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+        
+		<section>
+            <?php startCollapsible("epimax");?>
+                <h2 class=sectionheading>General Assistant - 2012-18 (sporadic)</h2>
+                <p class = place>Epimax Ltd.</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I performed many different roles, including assembly, calibration and testing of precision ion gauge controllers required in industries that use ultra-high vacuums, as well as packing units, interacting with suppliers, etc.
+                </p>
+                <p>
+                    The more technical side of the work gave me experience with electronics engineering, as well as software development for use in and outside the company.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+        
+		<section>
+            <?php startCollapsible("abh");?>
+                <h2 class=sectionheading>Clerical Work - 2013</h2>
+                <p class = place>Aneurin Bevan Health Board</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I located and transferred paper copies of confidential information onto the health board's computer system.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        <script type="text/javascript">
+            checkCookies();
+        </script>
 	</body>
 </html>

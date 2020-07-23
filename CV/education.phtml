@@ -4,6 +4,7 @@
 		<?php 
             include("../php/constants.php");
             include(_PHP . "/menus.php");
+            include(_PHP . "/collapsible.php");
         
         ?>
 		<meta charset="UTF-8">
@@ -21,58 +22,66 @@
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);?> 
+		<?php createMenuSystem($pages, $current);?>
 		<section>
-            <div id=bioinf class=collapsible onmouseup='collapse("bioinf")' onmouseover='highlight("bioinf")' onmouseout='highlight("bioinf")'>
+            <?php startCollapsible("bioinf");?>
                 <h2 class=sectionheading>MSc Bioinformatics - 2020</h2>
                 <p class=place>University of Leicester</p>
                 <small id=show>(show)</small>
                 <small class=hide id=hide>(hide)</small>
+                
             </div>
             <div class=inside>
                 <h3>Grade: Pass with Distinction</h3>
                 <p>My Masters consisted of three elements: <strong>lectures and coursework</strong>, a <strong>group project</strong>, and an <strong>individual project</strong> supervised by a member of the University of Leicester faculty.</p>
+                
+                 <hr style="width:10px">
+                
                 <section>
-                    <div id=landc class=collapsible onmouseup='collapse("landc")' onmouseover='highlight("landc")' onmouseout='highlight("landc")'>
+                    <?php startCollapsible("landc") ?>
                         <h3 class=sectionheading>Lectures and Coursework</h3> 
                         <small id=show>(show)</small>
                         <small id=hide class=hide>(hide)</small>
                     </div>
                     <div class="inside">
                         <p>The <strong>taught</strong> element of the course gave me knowledge of a variety of areas.  There were lectures on proteins, which included protein structure, post-translational modification, visualisation and modelling, as well as methods of determining proteins structure by experiment, such as NMR and X-ray Crystallography.  This module also included assessments on protein sequence analysis.</p>
-                        <p>There were also a set of lectures on genes and genomes, which covered genome sequencing techniques (including NGS), trascription and translation, and the enzymes involved, genetic mapping, genome annotation and comparative genomics, and construction of phylogenetic trees.  In this module, the assignments covered comparative genomics and the annotation of novel genome sequences.</p>
-                        <p>A number of programming and informatics modules were also a part of the course, with python, java and SQL, as well as a more general algorithms section.  It also contained a section on statistical analysis using R, and sample bootstrapping to ensure significance. Many of the people on my course had less experience with programming than I did, and I was able to provide help and advice when asked.
+                        <p>There was also a set of lectures on genes and genomes, which covered genome sequencing techniques (including NGS), transcription and translation, and the enzymes involved, genetic mapping, genome annotation and comparative genomics, and construction of phylogenetic trees.  In this module, the assignments covered comparative genomics and the annotation of novel genome sequences.</p>
+                        <p>A number of programming and informatics modules were also a part of the course, with python, java and SQL, as well as a more general algorithms section.  There was also a section on statistical analysis using R, and sample bootstrapping to ensure significance. Many of the people on my course had less experience with programming than I did, and I was able to provide help and advice when asked.
                         </p>
                     </div>
         
                 </section>
                 
+                <hr style="width:10px">
+                
                 <section>
-                    <div id=group class=collapsible onmouseup='collapse("group")' onmouseover='highlight("group")' onmouseout='highlight("group")'>
+                    <?php startCollapsible("group")?>
                         <h3 class=sectionheading>Group Project</h3> 
                         <small id=show>(show)</small>
                         <small id=hide class=hide>(hide)</small>
                     </div>
                     <div class="inside">
                         <p>
-                        In the <strong>group project</strong>, I was a member of a 4 person group, attempting to replicate and review methods from a gene expression study.  We also compared these methods with other, more recent, pipelines with similar applications.  The pipelines used were all written in, and accessed through, R, and so provided extensive experience in that language.  I also wrote the template for our web page, and used Shiny to generate interactive plots demonstrating our results.  The code repository for this project is available on my GitHub page, at <a href=https://github.com/MichaelKubiak/Group_Project>https://github.com/MichaelKubiak/Group_Project</a>, and the report can be viewed <a href=<?php echo _FILES . "/gp_report.pdf"?>>here</a>.
+                        In the <strong>group project</strong>, I was a member of a 4 person group, attempting to replicate and review methods from a gene expression study.  We also compared these methods with other, more recent, pipelines with similar applications.  The pipelines used were all written in, and accessed through, R, and so provided extensive experience in that language.  I also wrote the template for our web page, and used Shiny to generate interactive plots demonstrating our results.  The code repository for this project is available on my GitHub page, at <a href=https://github.com/MichaelKubiak/Group_Project>https://github.com/MichaelKubiak/Group_Project</a>, and the report can be viewed <a href= "../Files/gp_report.pdf">here</a>.
                         </p>
                     </div>
         
                 </section>
                 
+                <hr style="width:10px">
+                
                 <section>
-                    <div id=indiv class=collapsible onmouseup='collapse("indiv")' onmouseover='highlight("indiv")' onmouseout='highlight("indiv")'>
+                    <?php startCollapsible("indiv")?>
                         <h3 class=sectionheading>Individual Project</h3> 
                         <small id=show>(show)</small>
                         <small id=hide class=hide>(hide)</small>
                     </div>
                     <div class="inside">
                         <p>
-                        My <strong>individual project</strong> involved the use of machine learning approaches to annotate protein function from HMMER scores of proteins against the Pfam database.  To train these systems, I used protein annotations from Enzyme.dat, the EC annotation file for Swissprot proteins.  The manipulation of these large databases provided experience of preprocessing techniques, and required extensive use of SPECTRE, an HPC cluster at University of Leicester.  In testing different sets of variables for model training, I had to submit batch jobs to SPECTRE.  This project was mainly written in Python, and the code is available on my GitHub, at <a href=https://github.com/MichaelKubiak/Annotation>https://github.com/MichaelKubiak/Annotation</a>.  My report for this project is available from <a href=<?php echo _FILES . "/ip_report.pdf"?>>here</a>.  
+                        My <strong>individual project</strong> involved the use of machine learning approaches to annotate protein function from HMMER scores of proteins against the Pfam database.  To train these systems, I used protein annotations from Enzyme.dat, the EC annotation file for Swissprot proteins.  The manipulation of these large databases provided experience of preprocessing techniques, and required extensive use of SPECTRE, an HPC cluster at University of Leicester.  In testing different sets of variables for model training, I had to submit batch jobs to SPECTRE.  This project was mainly written in Python, and the code is available on my GitHub, at <a href=https://github.com/MichaelKubiak/Annotation>https://github.com/MichaelKubiak/Annotation</a>.  My report for this project is available from <a href="../Files/ip_report.pdf">here</a>.  
                         </p>
                         <p>
-                        I am continuing this project with support from my supervisor, and more about it can be found on the <a href=<?php echo _ROOT . "/Projects/eclassifier.phtml"?>>Enzyme Classifier</a> page.
+                        I am continuing this project with support from my supervisor, and more about it can be found on the <a href="../Projects/eclassifier.phtml">Enzyme Classifier</a> page.
                         </p>
                     </div>
         
@@ -81,10 +90,10 @@
             
         </section>
         
-        <hr>
+        <hr style="height:3px; background-color:grey">
         
         <section>
-            <div id=natsci class=collapsible onmouseup='collapse("natsci")' onmouseover='highlight("natsci")' onmouseout='highlight("natsci")'>
+            <?php startCollapsible("natsci")?>
                 <h2 class=sectionheading>BSc Natural Sciences - 2017</h2>
                 <p class = place>University of Bath</p>
                 <small id=show>(show)</small>
@@ -93,35 +102,52 @@
             <div class=inside>
                 <h3>Grade: 2:2</h3>
                 <p>
-                During my undergraduate degree, I took modules in physics, chemistry, and mathematics.  These included, but were not limited to, quantum physics and chemistry, analytical chemistry, Fourier Transforms, electrochemistry, vector calculus, chemistry of porous materials (such as MOFs, COFs, sodalites, etc.), fluid dynamics, and multiple modules about electromagnetism and maxwell's equations.
+                During my undergraduate degree, I took modules in physics, chemistry, and mathematics.  These included, but were not limited to, quantum physics and chemistry, analytical chemistry, Fourier Transforms, electrochemistry, vector calculus, chemistry of porous materials (such as MOFs, COFs, sodalites, etc.), fluid dynamics, and multiple modules about electromagnetism and Maxwell's equations.
                 </p>
                 <p>
-                My final year project involved investigation of the fluorescent properties of sodalites, and solid state synthesis of sodalites with white fluorescence.  The report for this project can be found <a href=<?php echo _FILES . "ug_report.pdf"?>>here</a>. LINK NEEDS FIXING
+                My final year project involved investigation of the fluorescent properties of sodalites, and solid state synthesis of sodalites with white fluorescence.  The report for this project can be found <a href="../Files/ug_report.pdf">here</a>. LINK NEEDS FIXING
                 </p>
                 <!--To be expanded once website is complete-->
             </div>
         </section>
         
-        <hr>
+        <hr style="height:3px; background-color:grey">
         
         <section>
-            <div id=school class=collapsible onmouseup='collapse("school")' onmouseover='highlight("school")' onmouseout='highlight("school")'>
+            <?php startCollapsible("school")?>
                 <h2 class=sectionheading>AS/A levels - 2012/13</h2> 
                 <p class=place>Rougemont School, Newport</p>
                 <small id=show>(show)</small>
                 <small id=hide class=hide>(hide)</small>
             </div>
-        
-        </section>
-        
-        <hr>
-        
-        <section>
-            <div id=sup class=collapsible onmouseup='collapse("sup")' onmouseover='highlight("sup")' onmouseout='highlight("sup")'>
-                <h2 class=sectionheading>Supplementary Qualifications</h2> 
-                <small id=show>(show)</small>
-                <small id=show class=hide>(hide)</small>
+            <div class=inside>
+                <p>I have A levels in Physics, Chemistry, Maths (all A's) and Further Maths, and AS levels in German and Critical Thinking.</p>
+                <p>Equivalently, I also got an A* in a WJEC Extended Project titled "What are Magnetic Resonance Imaging (MRI) and Nuclear Magnetic Resonance (NMR) Spectroscopy and how effective is MRI in the field of diagnostic medicine?"</p>
             </div>
         </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+        <section>
+            <?php startCollapsible("sup")?>
+                <h2 class=sectionheading>Supplementary Qualifications</h2> 
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                I am currently taking a cloud computing specialisation course to expand my area of expertise.
+                </p>
+                <p>
+                I have a Level 2 NVQ in "food and beverage science" which I undertook during my time working at the White Hart Inn.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+
+        <script type="text/javascript">
+            checkCookies();
+        </script>
 	</body>
 </html>

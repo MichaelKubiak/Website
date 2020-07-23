@@ -4,6 +4,7 @@
 		<?php 
             include("../php/constants.php");
             include(_PHP . "/menus.php");
+            include(_PHP . "/collapsible.php");
         
         ?>
 		<meta charset="UTF-8">
@@ -15,6 +16,7 @@
                 echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
+            echo "<script src=" . _JS . "/buttons.js></script>";
             $pages = getFileLists(["html", "phtml"]);
             $current = getCurrentPage();
         ?>
@@ -22,5 +24,38 @@
 	<body>
 		<?php createMenuSystem($pages, $current);?>
 		
+		<section>
+            <?php startCollapsible("fparcel");?>
+                <h2 class=sectionheading>COVID-19 aid - 2020</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I am putting together food parcels for people who are shielding, or otherwise unable to obtain food, in the local area, using donated goods. I also help to deliver hot food to some of those people.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+		
+        <section>
+            <?php startCollapsible("phw");?>
+                <h2 class=sectionheading>Software tester - 2017</h2>
+                <p class=place>Public Health Wales Computer Systems, Cardiff</p>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I tested the system to ensure that commands used in the computer system produced the expected effects within the system, and notified the intended recipients of test results appropriately.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        <script type="text/javascript">
+            checkCookies();
+        </script>
 	</body>
 </html>
