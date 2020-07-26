@@ -4,10 +4,11 @@
 		<?php 
             include("../php/constants.php");
             include(_PHP . "/menus.php");
+            include(_PHP . "/under_construction.php");
         
         ?>
 		<meta charset="UTF-8">
-		<title>MICHAEL KUBIAK - Website Project</title>
+		<title>MICHAEL KUBIAK - Website</title>
 		<meta name="Author" content="Michael Kubiak"/>
 		<meta name="Website" content="" id = "name"/>
 		<?php
@@ -15,12 +16,19 @@
                 echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
+			echo "<script src=" . _JS . "/buttons.js></script>";
             $pages = getFileLists(["html", "phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);?>
-		
+		<?php createMenuSystem($pages, $current);under_construction();?>
+        
+        See <a href="https://github.com/MichaelKubiak/Website">here</a> for code.
+
+        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
+        <script type="text/javascript">
+            checkCookies();
+        </script>		
 	</body>
 </html>

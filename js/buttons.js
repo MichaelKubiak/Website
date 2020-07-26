@@ -28,9 +28,18 @@ function checkCookies(){
         let cookie = cookies[i];
         if (cookie.endsWith("=1")){
             let name=cookie.split("=")[0].replace(" ", "");
-            if (this.document.getElementById(name)){
+            if (name == "cbanner"){
+                removeElement("cbanner");
+            }else if (this.document.getElementById(name)){
                 collapse(name);
             }
         }
     }
+}
+
+function removeElement(element){
+    this.document.getElementById(element).classList.add("hide");
+    expiry = new Date();
+    expiry.setFullYear(expiry.getFullYear()+1);
+    this.document.cookie = element+"=1; expires="+expiry.toUTCString() + "; path=/";
 }

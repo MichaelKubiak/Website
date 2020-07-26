@@ -15,28 +15,26 @@
                 echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
             }
             echo "<script src=" . _JS . "/menus.js></script>";
+            echo "<script src=" . _JS . "/buttons.js></script>";
             $pages = getFileLists(["phtml", "html"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);?>
+		<?php createMenuSystem($pages, $current);
+        echo "<img src='" . _IMG . "/Me.png' width = 30% class='right' style='margin-top:1%'>"?>
         <h2>About me</h2>
-        <?php echo "<img src='" . _IMG . "/Me.jpg' width = 30% class='right' style='margin-top:1%'>"?>
+        
         <p>I am a multidisciplinary, scientifically trained programmer, with knowledge in areas of biology, chemistry, and physics, and experience using multiple programming languages.  I enjoy working on interesting projects, and have a number on the go at present, as you'll see from the appropriate sections of the website.</p>
         <p>I have recently completed my MSc Bioinformatics at the University of Leicester with a Distinction, and I'm actively looking for a job or PhD, particularly in bioinformatics, but I'm open to anything that seems interesting (or even just gives me more experience).</p>
         <p>Currently, I live in South Wales, on a hill overlooking the Usk valley, and break up my days of coding and job applications by taking the dogs for walks through the forest.  I also play the piano to relax me when the project that I am currently working on gets too frustrating.</p>
         <p>In normal times I regularly went bouldering and climbing with a group that I formed.  We also play video games and tabletop games (often with me running them) remotely at present.</p>
         <p>I have also joined a group that is helping to provide food, for people who are shielding or otherwise unable to get it, by packing donated food into weekly or fortnightly parcels that can be delivered to their doorsteps.</p>
         
-        
-<!--
-        <p>This is my website about me, look, thats me, maybe you want to look at some other pages, doody-doody-doody-do.  I need to write more to check how this is going, it should be possible to see whats going on.  I should just have used Ipsum Lorem or whatever it is called I can't remember at the moment.</p>
-        <p>This is a new paragraph, hopefully the image will still appear correctly with 2 paragraphs next to it, wouldn't that be nice?</p>
-        <p>Oh, excellen, it worked.  I am amazed!</p>
-        <p>I'm good at spelling... I meant typing, I'mg reat at that</p>
--->
 		
-        
+        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
+        <script type="text/javascript">
+            checkCookies();
+        </script>
 	</body>
 </html>
