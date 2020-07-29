@@ -49,11 +49,17 @@ h2, h3, h4, h5{
 
 img{
     margin-right: 1%;
-    margin-left: 1%;    
+    margin-left: 1%;
+    border-radius: 10px;
 }
 
 img.right{
     float:right;
+    
+}
+
+img.left{
+    float: left;
 }
 
 .show {display:block;}

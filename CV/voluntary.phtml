@@ -17,7 +17,7 @@
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
             echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
@@ -54,9 +54,9 @@
         </section>
         
         <hr style="height:3px; background-color:grey">
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
+
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>
 	</body>
 </html>

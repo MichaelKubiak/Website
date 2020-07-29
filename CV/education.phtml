@@ -17,7 +17,7 @@
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
             echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="inside">
                         <p>
-                        In the <strong>group project</strong>, I was a member of a 4 person group, attempting to replicate and review methods from a gene expression study.  We also compared these methods with other, more recent, pipelines with similar applications.  The pipelines used were all written in, and accessed through, R, and so provided extensive experience in that language.  I also wrote the template for our web page, and used Shiny to generate interactive plots demonstrating our results.  The code repository for this project is available on my GitHub page, at <a href=https://github.com/MichaelKubiak/Group_Project>https://github.com/MichaelKubiak/Group_Project</a>, and the report can be viewed <a href= "../Files/gp_report.pdf">here</a>. PLEASE NOTE: the webserver on which the website was displayed was private, so cannot be viewed from outside the University of Leicester.
+                        In the <strong>group project</strong>, I was a member of a 4 person group, attempting to replicate and review methods from a gene expression study.  We also compared these methods with other, more recent, pipelines with similar applications.  The pipelines used were all written in, and accessed through, R, and so provided extensive experience in that language.  I also wrote the template for our web page, and used Shiny to generate interactive plots demonstrating our results.  The code repository for this project is available on my GitHub page, at <a href=https://github.com/MichaelKubiak/Group_Project target="_blank">https://github.com/MichaelKubiak/Group_Project</a>, and the report can be viewed <a href= "../Files/gp_report.pdf" target="_blank">here</a>. PLEASE NOTE: the webserver on which the website was displayed was private, so cannot be viewed from outside the University of Leicester.
                         </p>
                     </div>
         
@@ -78,7 +78,7 @@
                     </div>
                     <div class="inside">
                         <p>
-                        My <strong>individual project</strong> involved the use of machine learning approaches to annotate protein function from HMMER scores of proteins against the Pfam database.  To train these systems, I used protein annotations from Enzyme.dat, the EC annotation file for Swissprot proteins.  The manipulation of these large databases provided experience of preprocessing techniques, and required extensive use of SPECTRE, an HPC cluster at University of Leicester.  In testing different sets of variables for model training, I had to submit batch jobs to SPECTRE.  This project was mainly written in Python, and the code is available on my GitHub, at <a href=https://github.com/MichaelKubiak/Annotation>https://github.com/MichaelKubiak/Annotation</a>.  My report for this project is available from <a href="../Files/ip_report.pdf">here</a>.  
+                        My <strong>individual project</strong> involved the use of machine learning approaches to annotate protein function from HMMER scores of proteins against the Pfam database.  To train these systems, I used protein annotations from Enzyme.dat, the EC annotation file for Swissprot proteins.  The manipulation of these large databases provided experience of preprocessing techniques, and required extensive use of SPECTRE, an HPC cluster at University of Leicester.  In testing different sets of variables for model training, I had to submit batch jobs to SPECTRE.  This project was mainly written in Python, and the code is available on my GitHub, at <a href=https://github.com/MichaelKubiak/Annotation target="_blank">https://github.com/MichaelKubiak/Annotation</a>.  My report for this project is available from <a href="../Files/ip_report.pdf" target="_blank">here</a>.  
                         </p>
                         <p>
                         I am continuing this project with support from my supervisor, and more about it can be found on the <a href="../Projects/eclassifier.phtml">Enzyme Classifier</a> page.
@@ -105,7 +105,7 @@
                 During my undergraduate degree, I took modules in physics, chemistry, and mathematics.  These included, but were not limited to, quantum physics and chemistry, analytical chemistry, Fourier Transforms, electrochemistry, vector calculus, chemistry of porous materials (such as MOFs, COFs, sodalites, etc.), fluid dynamics, and multiple modules about electromagnetism and Maxwell's equations.
                 </p>
                 <p>
-                My final year project involved investigation of the fluorescent properties of sodalites, and solid state synthesis of sodalites with white fluorescence.  The report for this project can be found <a href="../Files/ug_report.pdf">here</a>.
+                My final year project involved investigation of the fluorescent properties of sodalites, and solid state synthesis of sodalites with white fluorescence.  The report for this project can be found <a href="../Files/ug_report.pdf" target="_blank">here</a>.
                 </p>
                 <!--To be expanded once website is complete-->
             </div>
@@ -122,7 +122,7 @@
             </div>
             <div class=inside>
                 <p>I have A levels in Physics, Chemistry, Maths (all A's) and Further Maths, and AS levels in German and Critical Thinking.</p>
-                <p>Equivalently, I also got an A* in a WJEC Extended Project titled "What are Magnetic Resonance Imaging (MRI) and Nuclear Magnetic Resonance (NMR) Spectroscopy and how effective is MRI in the field of diagnostic medicine?"</p>
+                <p>I also got an A* in a WJEC Extended Project titled "What are Magnetic Resonance Imaging (MRI) and Nuclear Magnetic Resonance (NMR) Spectroscopy and how effective is MRI in the field of diagnostic medicine?"</p>
             </div>
         </section>
         
@@ -136,19 +136,18 @@
             </div>
             <div class=inside>
                 <p>
-                I am currently taking a cloud computing specialisation course to expand my area of expertise.
+                    I am currently taking a remote cloud computing specialisation course produced by the University of Illinois, as a part of their MSc Computer Science.  It leads to a qualification and can be used as credit towards that degree if I wish. 
                 </p>
                 <p>
-                I have a Level 2 NVQ in "food and beverage science" which I undertook during my time working at the White Hart Inn.
+                    I have a Level 2 NVQ in "food and beverage science" which I undertook during my time working at the White Hart Inn.
                 </p>
             </div>
         </section>
         
         <hr style="height:3px; background-color:grey">
 
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>
 	</body>
 </html>

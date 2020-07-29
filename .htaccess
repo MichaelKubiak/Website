@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.phtml [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.phtml -f
+RewriteRule ^ %{REQUEST_URI}.phtml [NC,L]
+
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^(.*)$ https://www.michaelkubiak.co.uk/$1 [R=301,L]
+
+DirectoryIndex home.phtml

@@ -17,7 +17,7 @@
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
             echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
@@ -38,7 +38,7 @@
                     I provided information and guidance for students (the 2020-21 cohort of MSc Bioinformatics students, i.e. the cohort after mine) during practical sessions, helping them to consolidate the information that they had gained during their lectures.
                 </p>
                 <p>
-                    I also marked coursework that the students had written, providing fixed versions of their code where neccessary, and returned those marks to the lecturer for moderation.
+                    I also marked coursework that the students had written, providing fixed versions of their code where necessary, and returned those marks to the lecturer for moderation.
                 </p>
                 <hr style="width:10px">
                 <section>
@@ -148,9 +148,9 @@
         </section>
         
         <hr style="height:3px; background-color:grey">
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
+
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>
 	</body>
 </html>

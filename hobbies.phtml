@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<?php 
+            include("./php/constants.php");
+            include(_PHP . "/menus.php");
+            include(_PHP . "/collapsible.php");
+        
+        ?>
+		<meta charset="UTF-8">
+		<title>MICHAEL KUBIAK - Hobbies</title>
+		<meta name="Author" content="Michael Kubiak"/>
+		<meta name="Hobbies" content="A page detailing what I like to do in my spare time" id = "name"/>
+		<?php
+			foreach (getFileLists(["css"], _CSS) as $file){
+                echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
+            }
+			echo "<script src=" . _JS . "/menus.js></script>";
+			echo "<script src=" . _JS . "/buttons.js></script>";
+            $pages = getFileLists(["phtml"]);
+            $current = getCurrentPage();
+        ?>
+	</head>
+	<body>
+		<?php createMenuSystem($pages, $current);?>
+        
+        <section>
+            <?php startCollapsible("Baking")?>
+                <h2 class=sectionheading>Baking</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <img src="Images/cake.jpg" class=right width=10%>
+                <p>
+                    I enjoy making cakes, biscuits, traybakes, fruit crumbles, etc. and improving on recipes that I find.  My best cakes are sponges, and I've made a lot of Victoria sponges and chocolate sponges, but have recently branched out into coffee and walnut sponges as well. 
+                </p>
+                <p>
+                    I make ginger biscuits, as well as maple and pecan biscuits quite often, and apple crumbles for my family on a fairly regular basis, while Bramley apples are in season.  
+                </p>
+                
+                <img src="Images/bread.jpg" class=left width=10%>
+                
+                <p>
+                    I also bake bread and savoury pies and pasties.
+                </p>
+            </div>
+        </section>
+    
+        
+        <hr style="height:3px; background-color:grey">
+    
+        <section>
+            <?php startCollapsible("Games")?>
+                <h2 class=sectionheading>Games</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+
+            <div class=inside>
+                <p>
+                    I enjoy playing a wide variety of games, including video and tabletop games:
+                </p>
+            
+                <hr style="width:10px">
+                <section>
+                    <?php startCollapsible("tt")?>
+                        <h3 class=sectionheading>Tabletop Games</h3>
+                        <small id=show>(show)</small>
+                        <small id=hide class=hide>(hide)</small>
+                    </div>
+                    <div class=inside>
+                        <img class=right src="Images/space_marines.jpg" width=20%/>
+                        <p>
+                            I play chess irregularly with my dad, and have since I was a child.  I have recently started playing online as well.
+                        </p>
+                        <p>
+                            I collected Warhammer 40K for a long time while I was at school, painting very poorly, and playing infrequently.  I have recently started painting some of the models that I didn't get around to at that time (shown to the right).
+                        </p>
+                        <p>
+                            During my undergrad, I would play boardgames, like Pandemic and Carcassone, with my brother, whenever we met up in person.
+                        </p>
+                        <p>
+                            I have listened to actual play podcasts, among other types, for a number of years, but have only started actively participating in TTRPGs recently.  During my MSc, I gathered a group (mostly different members than the climbing group) to play a game called Blades in the Dark, which we played until December, when most of the group left the city.
+                        </p>
+                        <p>
+                            In February, I suggested that we start playing Beamsaber online, and we have been playing each week since then, with other games, such as A Quiet Year and Fiasco sprinkled in ocassionally.
+                        </p>
+                        <p>
+                            We have plans to start playing boardgames ocassionally, as well, using Tabletop Simulator. 
+                        </p>
+                    </div>
+                </section>
+    
+                <hr style="width:10px">
+    
+                <section>
+                    <?php startCollapsible("vgames")?>
+                        <h3 class=sectionheading>Video Games</h3>
+                        <small id=show>(show)</small>
+                        <small id=hide class=hide>(hide)</small>
+                    </div>
+                    <div class=inside>
+                        <p>
+                            When I have time, I play various video games, both single player and multiplayer.  The latter provide good opportunities to keep in touch, and have fun, with my friends
+                        </p>
+                        <p>
+                             My most commonly played games are roguelike and/or deckbuilding games, and role playing games, but I also play tactics games, action/fps, or any other game if it sounds interesting.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    
+        
+        <hr style="height:3px; background-color:grey">
+
+        <section>
+            <?php startCollapsible("Music")?>
+                <h2 class=sectionheading>Music</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I learned to play the piano from a very young age, and have also made forays into other instruments, with less long lasting consequences.
+                </p>
+                <p>
+                    I have an electronic piano keyboard that I play whenever I am living somewhere without a real piano, such as when I was at university.
+                </p>
+                <p>
+                    I tend to play classical music, or music from the soundtracks of games that I particularly like, but I also experiment with other music when I come across the sheet music for it.
+                </p>
+                <p>
+                    I listen to a wide variety of music, best characterised as "what is on".
+                </p>
+            </div>
+        </section>
+    
+        
+        <hr style="height:3px; background-color:grey">
+    
+        <section>
+            <?php startCollapsible("Reading")?>
+                <h2 class=sectionheading>Reading</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I read anything that looks interesting or fun, which normally means sci-fi/fantasy, or popular science books, but also includes some mysteries, comedies, and other books.
+                </p>
+                <p>
+                    I also listen to audiobooks and podcasts.  These can be broadly grouped into scientific, dramatic (including actual play), and comedic, with some overlap.
+                </p>
+            </div>
+        </section>
+
+        <hr style="height:3px; background-color:grey">
+
+        <section>
+            <?php startCollapsible("Climbing")?>
+                <h2 class=sectionheading>Rock Climbing</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I have been rock climbing since 6th form, where it was offered as an optional activity for "games" each Wednesday afternoon.  A small group of us would be taken, by bus, either to a bouldering centre in Abergavenny, which is now sadly closed, or to Boulders in Cardiff, for roped climbing. 
+                </p>
+                <p>
+                    During my undergrad, I went bouldering with the climbing society for the first couple of years, before changing to a separate group to which my brother also belonged, to do some outdoor climbing, near Chepstow, together with more roped climbing and bouldering indoors around Bristol.
+                </p>
+                <p>
+                    Once I completed my undergrad, and through my time working at the pub, I continued to climb with this group.
+                </p>
+                <p>
+                    When I moved to Leicester, I formed a small group of my classmates, mostly new to climbing, and we continued to climb together regularly throughout our time in Leicester.
+                </p>
+            </div>
+        </section>
+    
+        
+        <hr style="height:3px; background-color:grey">
+    <section>
+            <?php startCollapsible("Woodwork")?>
+                <h2 class=sectionheading>Woodwork</h2>
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    <img src="Images/bowl.jpg" class=right width=10%>
+                    During 6th form, I spent many of my Saturdays at a nearby craft shop, which had an attached space for woodworking.  I used a wood lathe to produce a number of different products, including bowls and bowling pins.  I also did some restoration of a clock, and some pyrography.  An example of my work is shown on the right.
+                </p>
+                <p>
+                    More recently, I have been learning to carve, although I have yet to produce anything that looks remotely like I intended it to look!
+                </p>
+            </div>
+        </section>
+    
+        
+        <hr style="height:3px; background-color:grey">
+
+        
+    
+        <script type="text/javascript">
+            checkCookies("<?php echo _ROOT?>");
+        </script>		
+	</body>
+</html>

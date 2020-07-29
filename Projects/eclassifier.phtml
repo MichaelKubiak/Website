@@ -8,26 +8,25 @@
         
         ?>
 		<meta charset="UTF-8">
-		<title>MICHAEL KUBIAK - Games</title>
+		<title>MICHAEL KUBIAK - Enzyme Classifier Project</title>
 		<meta name="Author" content="Michael Kubiak"/>
-		<meta name="Games" content="" id = "name"/>
+		<meta name="Enzyme Classifier" content="" id = "name"/>
 		<?php
 			foreach (getFileLists(["css"], _CSS) as $file){
                 echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
 			echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);under_construction();?>
+		<?php createMenuSystem($pages, $current);under_construction()?>
 
 
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>		
 	</body>
 </html>

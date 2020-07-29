@@ -15,6 +15,7 @@ function collapse(colbutid){
     var hide = colbut.children.namedItem("hide");
     show.classList.toggle("hide");
     hide.classList.toggle("hide");
+    colbut.classList.toggle("selected");
 }
 
 function highlight(butid){
@@ -22,18 +23,22 @@ function highlight(butid){
     button.classList.toggle("highlighted");
 }
 
-function checkCookies(){
+function checkCookies(root){
     var cookies = this.document.cookie.split(";");
+    let banner = true;
     for (let i = 0; i< cookies.length; i++){
         let cookie = cookies[i];
         if (cookie.endsWith("=1")){
             let name=cookie.split("=")[0].replace(" ", "");
             if (name == "cbanner"){
-                removeElement("cbanner");
+                banner = false;
             }else if (this.document.getElementById(name)){
                 collapse(name);
             }
         }
+    }
+    if (banner){
+        document.write("<div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=" + root +  ".cookies.html style=color:yellow>learn more</a></p><button class=banner onclick=removeElement('cbanner')>OK</button></div>");
     }
 }
 

@@ -17,18 +17,17 @@
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
 			echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
 		<?php createMenuSystem($pages, $current);under_construction();?>
         
-        See <a href="https://github.com/MichaelKubiak/Website">here</a> for code.
+        See <a href="https://github.com/MichaelKubiak/Website" target="_blank">here</a> for code.
 
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>		
 	</body>
 </html>

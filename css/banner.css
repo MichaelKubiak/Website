@@ -1,0 +1,26 @@
+.bottom{
+    position:fixed;
+    bottom:0;
+}
+
+div.banner{
+    background-color: #333366AA;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-height:5%;
+    
+    text-align: center;
+}
+
+p.banner{
+    color:white;
+    vertical-align: middle;
+    display:inline-block;
+}
+
+button.banner{
+    color:black;
+    background-color: orange;
+    display:inline-block;
+    border-color: orange;
+}

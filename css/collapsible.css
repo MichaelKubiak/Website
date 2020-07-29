@@ -1,0 +1,35 @@
+.collapsible{
+    text-align: center;
+    cursor: pointer;
+}
+
+.sectionheading{
+
+    margin-bottom: 0;
+}
+
+.place {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+small{
+    color: darkgrey;
+    cursor: pointer;
+}
+
+
+.inside{
+    max-height:0;
+    overflow:hidden;
+    transition: max_height 0.2s ease-out;
+}
+
+.highlighted{
+    background-color: lightgrey;
+}
+
+.selected{
+    background-color: grey;
+    color: white;
+}

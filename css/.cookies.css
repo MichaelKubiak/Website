@@ -1,0 +1,32 @@
+html, body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.title{
+    min-height: 100px;
+    text-align: center;
+    background-color:var(--secondary-menu);    
+}
+h1 {
+    display:inline-block;
+    vertical-align: middle;
+    color: var(--primary-text);
+}
+
+p{
+    margin-left: 1%;
+    text-align: center;
+}
+
+div.back{
+    text-align: center;
+}
+
+button.back{
+    color: var(--primary-text);
+    background-color: var(--secondary-menu);
+    border-color: var(--secondary-menu);
+    
+}

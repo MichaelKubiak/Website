@@ -16,20 +16,28 @@
             }
 			echo "<script src=" . _JS . "/menus.js></script>";
             echo "<script src=" . _JS . "/buttons.js></script>";
-            $pages = getFileLists(["html", "phtml"]);
+            $pages = getFileLists(["phtml"]);
             $current = getCurrentPage();
         ?>
 	</head>
 	<body>
 		<?php createMenuSystem($pages, $current);?>
 		<p>If you would like to offer me a job, or let me know about any problems with this website, please don't hesitate to contact me:</p>
-        <p style='text-align:center'><strong>Mobile:</strong> <a href= tel: +447956960722>07956 960722</a></p>
-        <p style='text-align:center'><strong>Email:</strong> <a href= mailto: michael.kubiak@bath.edu>michael.kubiak@bath.edu</a></p>
-        <p style='text-align:center'><strong>LinkedIn:</strong> <a href=www.linkedin.com/in/m-i-c-h-a-e-l-kubiak>www.linkedin.com/in/m-i-c-h-a-e-l-kubiak</a></p>
+        <hr>
+        <div class=centre>
+            <p><strong>Mobile:</strong> <a href= tel: +447956960722>07956 960722</a></p>
+            <p><strong>Email:</strong> <a href= mailto: michael.kubiak@bath.edu>michael.kubiak@bath.edu</a></p>
+            <p><strong>LinkedIn:</strong> <a href=https://www.linkedin.com/in/m-i-c-h-a-e-l-kubiak target=_blank>www.linkedin.com/in/m-i-c-h-a-e-l-kubiak</a></p>
+            <p><strong>Address:</strong></p>
+            <p>Bwthyn Cadwen</p>
+            <p>Pen-y-cae-Mawr</p>
+            <p>Wentwood</p>
+            <p>Usk</p>
+            <p>NP15 1NA</p>
+        </div>
         
-        <div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick="removeElement('cbanner')">OK</button></div>
         <script type="text/javascript">
-            checkCookies();
+            checkCookies("<?php echo _ROOT?>");
         </script>
 	</body>
 </html>

@@ -85,7 +85,7 @@
                             $style = "ddchild menu-this";
                         else
                             $style = "ddchild menu-other";
-                        echo "<a onmouseover=dropdown($heading) onmouseout=closeMenu($heading) class='$style' href='$subpage[dirname]/$subpage[basename]'>$name</a>";
+                        echo "<a onmouseover=dropdown($heading) onmouseout=closeMenu($heading) class='$style' href='$subpage[dirname]/$subpage[filename]'>$name</a>";
                     }
                 }
                 
