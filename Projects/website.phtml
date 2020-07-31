@@ -40,7 +40,31 @@
             </div>
             <div class=inside>
                 <p>
-                    The template for my pages, visible <a href=../Files/template target="_blank">here</a>, was built up, starting with the title
+                    The template for my pages, visible <a href=https://github.com/MichaelKubiak/Website/blob/master/template target="_blank">here</a>, originated with the menu creation.
+                </p>
+                <p>
+                    The intention was to have a general function for creating menus that had the same content on all pages, but showed which page was currently open.  This required server-side file system parsing, and so the obvious choice was to use PHP for the menu creation.
+                </p>
+                <p>
+                    I started with the file system parsing, writing a recursive function that searched each directory (to a max depth of 10 directories (as a value which would not be exceeded for this purpose)) in a path to find any files with extensions in an array (provided as an argument, but in this case, phtml).  This leads to the return of an array containing any phtml files as well as child arrays containing files from sub-directories.  The template also contains a function to get information about the currently displayed page at this point.
+                </p>
+                <p>
+                    Now in possession of a list of files and information about which page is calling the functions, the template calls a menu creation function, which creates the title bar (including the title and the menu).
+                </p>
+                <p>
+                    This function starts by reordering the array based on an ordering file, which has two, caret (since it is an uncommon symbol) separated, lists of filenames, one for pages that should remain at the beginning of the menu, and the other for those at the end. 
+                </p>
+                <p>
+                    The title of each page is stored in a <em>meta</em> tag, which is interrogated by a function that obtains information by use of DOM.
+                </p>
+                <p>
+                    The title of the current page is displayed as would be expected.
+                </p>
+                <p>
+                    Each page in the array is checked to see whether its title matches that of the current page, and has a different css class, depending on the outcome. 
+                </p>
+                <p>
+                    Finally, the template also creates the cookie warning at the bottom of the page, and checks the cookie created by that warning, as well as those created by sections of the content structures discussed below.
                 </p>
             </div>
         </section>
