@@ -1,0 +1,33 @@
+<!--
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<?php 
+            include("../php/constants.php");
+            include(_PHP . "/menus.php");
+        
+        ?>
+		<meta charset="UTF-8">
+		<title>Untitled Document</title>
+		<meta name="Author" content="Michael Kubiak"/>
+		<meta name="Description" content="file_description" id = "name"/>
+		<?php
+			foreach (getFileLists(["css"], _CSS) as $file){
+                echo "<link rel='stylesheet' type='text/css' href='" . _CSS . "/$file[basename]'>";
+            }
+			echo "<script src=" . _JS . "/menus.js></script>";
+			echo "<script src=" . _JS . "/buttons.js></script>";
+            $pages = getFileLists(["html", "phtml"]);
+            $current = getCurrentPage();
+        ?>
+	</head>
+	<body>
+		<?php createMenuSystem($pages, $current);?>
+
+
+        <script type="text/javascript">
+            checkCookies();
+        </script>		
+	</body>
+</html>
+-->

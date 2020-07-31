@@ -5,6 +5,7 @@
             include("../php/constants.php");
             include(_PHP . "/menus.php");
             include(_PHP . "/under_construction.php");
+            include(_PHP . "/collapsible.php");
         
         ?>
 		<meta charset="UTF-8">
@@ -24,8 +25,29 @@
 	<body>
 		<?php createMenuSystem($pages, $current);under_construction();?>
         
-        See <a href="https://github.com/MichaelKubiak/Website" target="_blank">here</a> for code.
-
+        <p>
+            The code for this website is available on my GitHub page in <a href="https://github.com/MichaelKubiak/Website" target="_blank">the Website repository</a>.
+        </p>
+        <p>
+            The development process can be broken down into three main sections, <strong>the template</strong>, including the title and menus, <strong>the content structures</strong>, collapsible divs, etc., and <strong>the content</strong> itself.
+        </p>
+        
+        <section>
+            <?php startCollapsible("template")?>
+                <h2 class=sectionheading>The Template</h2> 
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    The template for my pages, visible <a href=../Files/template target="_blank">here</a>, was built up, starting with the title
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
+        
+        
         <script type="text/javascript">
             checkCookies("<?php echo _ROOT?>");
         </script>		

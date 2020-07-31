@@ -38,7 +38,7 @@ function checkCookies(root){
         }
     }
     if (banner){
-        document.write("<div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=" + root +  ".cookies.html style=color:yellow>learn more</a></p><button class=banner onclick=removeElement('cbanner')>OK</button></div>");
+        document.write("<div class='bottom screenwidth banner' id=cbanner><p class=banner>This website uses cookies - <a href=" + root +  "/.cookies.html style=color:yellow>learn more</a></p><button class=banner onclick=removeElement('cbanner')>OK</button></div>");
     }
 }
 
