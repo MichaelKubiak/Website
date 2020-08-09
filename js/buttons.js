@@ -18,6 +18,10 @@ function collapse(colbutid){
     colbut.classList.toggle("selected");
 }
 
+function linkToCollapsible(colbutid, path){
+    this.document.cookie = colbutid + "=1; expires=0; path=" + path;
+}
+
 function highlight(butid){
     var button = this.document.getElementById(butid);
     button.classList.toggle("highlighted");

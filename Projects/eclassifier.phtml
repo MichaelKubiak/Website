@@ -24,7 +24,20 @@
 	<body>
 		<?php createMenuSystem($pages, $current);under_construction()?>
 
-
+<section>
+            <?php startCollapsible("Origin")?>
+                <h2 class=sectionheading>Origins of the Project</h2> 
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    This project started as my individual project for my <a href=../CV/education.phtml#indiv onclick='linkToCollapsible("indiv", "/CV");linkToCollapsible("bioinf", "/CV")'> masters course </a> 
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
         <script type="text/javascript">
             checkCookies("<?php echo _ROOT?>");
         </script>		

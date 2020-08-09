@@ -23,13 +23,13 @@
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);under_construction();?>
+		<?php createMenuSystem($pages, $current);?>
         
         <p>
             The code for this website is available on my GitHub page in <a href="https://github.com/MichaelKubiak/Website" target="_blank">the Website repository</a>.
         </p>
         <p>
-            The development process can be broken down into three main sections, <strong>the template</strong>, including the title and menus, <strong>the content structures</strong>, collapsible divs, etc., and <strong>the content</strong> itself.
+            The development process can be broken down into two sections, <strong>the template</strong>, including the title and menus, and <strong>the collapsibles</strong>.  The content writing is still ongoing, but should soon be complete.
         </p>
         
         <section>
@@ -46,7 +46,7 @@
                     The intention was to have a general function for creating menus that had the same content on all pages, but showed which page was currently open.  This required server-side file system parsing, and so the obvious choice was to use PHP for the menu creation.
                 </p>
                 <p>
-                    I started with the file system parsing, writing a recursive function that searched each directory (to a max depth of 10 directories (as a value which would not be exceeded for this purpose)) in a path to find any files with extensions in an array (provided as an argument, but in this case, phtml).  This leads to the return of an array containing any phtml files as well as child arrays containing files from sub-directories.  The template also contains a function to get information about the currently displayed page at this point.
+                    I started by writing a recursive function that searches each directory (to a max depth of 10 directories (as a value which would not be exceeded for this purpose)) in a path to find any files with extensions in an array (provided as an argument, but in this case, phtml).  This leads to the return of an array containing any phtml files as well as child arrays containing files from sub-directories.  The template also contains a function to get information about the currently displayed page at this point.
                 </p>
                 <p>
                     Now in possession of a list of files and information about which page is calling the functions, the template calls a menu creation function, which creates the title bar (including the title and the menu).
@@ -58,19 +58,57 @@
                     The title of each page is stored in a <em>meta</em> tag, which is interrogated by a function that obtains information by use of DOM.
                 </p>
                 <p>
-                    The title of the current page is displayed as would be expected.
+                    The title of the current page is displayed as would be expected, then the navigation menu is created.  Each page in the array is checked to see whether its title matches that of the current page, and the <em>a</em> tag that is linked to that page is given a different css class, depending on the outcome. 
                 </p>
                 <p>
-                    Each page in the array is checked to see whether its title matches that of the current page, and has a different css class, depending on the outcome. 
-                </p>
-                <p>
-                    Finally, the template also creates the cookie warning at the bottom of the page, and checks the cookie created by that warning, as well as those created by sections of the content structures discussed below.
+                    Finally, the template also creates the cookie warning at the bottom of the page, and checks the cookie created by that warning (to prevent it from being shown), as well as those created by the collapsibles discussed below.
                 </p>
             </div>
         </section>
         
         <hr style="height:3px; background-color:grey">
         
+        <section>
+            <?php startCollapsible("collapsibles")?>
+                <h2 class=sectionheading>Collapsibles</h2> 
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    I find that collapsible sections are useful for displaying what is on a webpage without overwhelming a visitor with text that they are not looking for.  
+                </p>
+                <p>
+                    I used javascript to trigger the collapsible (client-side) behaviour.  This included swapping the visibility of the hide and show labels, setting the background colour of the title div, and toggling the maximum size of the portion that becomes hidden between 0 and MAX_INT so that any sub-collapsibles will also show.
+                </p>
+                <p>
+                    Finally, a cookie, which lasts until the browser is closed, is created to inform the page about which collapsibles should be open if the page is returned to after navigating away.
+                </p>
+                <p>
+                    The initial tag for a collapsible is created in php to avoid having to copy and paste, then replace multiple cases of the id for each collapsible created.
+                </p>
+            </div>
+        </section>
+
+        <hr style="height:3px; background-color:grey">
+        
+        <section>
+            <?php startCollapsible("future")?>
+                <h2 class=sectionheading>Future Work</h2> 
+                <small id=show>(show)</small>
+                <small id=hide class=hide>(hide)</small>
+            </div>
+            <div class=inside>
+                <p>
+                    The remaining work before the website is complete is to finish writing the content for the Projects section.
+                </p>
+                <p>
+                    Once that is complete, I intend to work on making the website mobile compatible and ensure that is is compatible with all browsers.  This is less of a priority, however, and will take more of a backseat to my other projects until those are complete.
+                </p>
+            </div>
+        </section>
+        
+        <hr style="height:3px; background-color:grey">
         
         <script type="text/javascript">
             checkCookies("<?php echo _ROOT?>");
