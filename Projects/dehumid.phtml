@@ -4,11 +4,10 @@
 		<?php 
             include("../php/constants.php");
             include(_PHP . "/menus.php");
-            include(_PHP . "/under_construction.php");
         
         ?>
 		<meta charset="UTF-8">
-		<title>MICHAEL KUBIAK - Dehumidifier Control Project</title>
+		<title>Michael Kubiak - Dehumidifier Control Project</title>
 		<meta name="Author" content="Michael Kubiak"/>
 		<meta name="Dehumidifier Control" content="" id = "name"/>
 		<?php
@@ -22,7 +21,26 @@
         ?>
 	</head>
 	<body>
-		<?php createMenuSystem($pages, $current);under_construction()?>
+		<?php createMenuSystem($pages, $current)?>
+		<img src="../Images/dehumid.jpg" class=right width=20%>
+	<p>
+            <strong>This project is unlikely to be finished as I am no longer living with my parents, and so the impetus is gone.</strong>
+        </p>
+        <p>
+            I have built (with help), and am writing the code for, a device to control the activity of a dehumidifier.  This device consists of a microprocessor, a real time clock, a display, an 8k EPROM, and a temperature and humidity sensor. An image is shown to the right.
+        </p>
+        
+        <p>
+            The processor communicates with the display using a series of pins set high or low to send a message, and the rest of the components using an I2C bus. 
+        </p>
+        <p>
+            I have written all of the code for this project in C.
+        </p>
+        
+        <p>
+            My most recent work on this project has been implementing a timer that can be used to deactivate the dehumidifier for a period of time, but expanding the menus has shown a number of bugs in the software that need to be removed.  I will also include a setting for turning the dehumidifier on and off at a set humidity.
+        </p>
+		  
 
         <script type="text/javascript">
             checkCookies("<?php echo _ROOT?>");
