@@ -8,7 +8,7 @@
         
         ?>
 		<meta charset="UTF-8">
-		<title>MICHAEL KUBIAK - Work</title>
+		<title>Michael Kubiak - Work</title>
 		<meta name="Author" content="Michael Kubiak"/>
 		<meta name="Work" content="" id = "name"/>
 		<?php
@@ -25,7 +25,25 @@
 		<?php createMenuSystem($pages, $current);?>
         <br>
         Please <a href="../contact.phtml">contact me</a> for further contact details of referees.
-        
+        <section>
+	  <?php startCollapsible("sanger");?>
+	  <h2 class=sectionheading>Software Developer 2020-present</h2>
+	  <p class = place>Wellcome Sanger Institute</p>
+	  <small id=show>(show)</small>
+	  <small id=hide class=hide>(hide)</small>
+        </div>
+          <div class=inside>
+            <p>
+                I work in <a href=https://www.sanger.ac.uk/tool/npg-0/>NPG</a> which maintains the tools and pipelines that extract and analyse data from the sequencing machines as well as performing various ad hoc tasks requrested by customers.  I have helped to maintain and develop tools in perl, python, C and go, as well as building and maintaining the ci we use for building the conda packages that we rely(ed) on for our production pipelines.  Most of my work on this is in my <a href=https://github.com/mksanger>work github</a>.
+            </p>
+            <p>
+                I have also added code to our Illumina and PacBio pipelines which provides iRODS (data storage) data paths in the Multi-Lims Warehouse (MLWH) making it easier to find the data that a person is looking for.
+            </p>
+          </div>
+          </section>
+
+          <hr style="height:3px; background-color:grey">
+
 		<section>
             <?php startCollapsible("demon");?>
                 <h2 class=sectionheading>Python Demonstrator - 2020</h2>
